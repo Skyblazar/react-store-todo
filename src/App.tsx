@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import { LoginPage } from "./pages/Login.page";
 import { ProtectedRoute } from "./ProtectedRoute";
+import { TodoPage } from "./pages/Todo.page";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
           path="/"
           element={
             <ProtectedRoute>
-              <h3>Main App</h3>
+              <TodoPage />
             </ProtectedRoute>
           }
         />
