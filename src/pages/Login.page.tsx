@@ -1,6 +1,7 @@
 import { FormEvent } from "react";
 import "./Login.page.css";
 import { useNavigate } from "react-router-dom";
+import { appStore } from "../stores/app.store";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -11,8 +12,10 @@ export const LoginPage = () => {
       return;
     }
 
-    localStorage.setItem("email", e.currentTarget.email.value);
-    localStorage.setItem("password", e.currentTarget.password.value);
+    appStore.updateProperty("user", {
+      email: e.currentTarget.email.value,
+      password: e.currentTarget.password.value,
+    });
 
     navigate("/");
   };
