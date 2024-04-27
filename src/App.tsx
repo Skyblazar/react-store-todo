@@ -3,20 +3,24 @@ import "./App.css";
 import { LoginPage } from "./pages/Login.page";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { TodoPage } from "./pages/Todo.page";
+import { FreeRoute } from "./FreeRoute";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<ProtectedRoute />}>
+          <Route path="/" element={<TodoPage />} />
+        </Route>
+
         <Route
-          path="/"
+          path="/login"
           element={
-            <ProtectedRoute>
-              <TodoPage />
-            </ProtectedRoute>
+            <FreeRoute>
+              <LoginPage />
+            </FreeRoute>
           }
         />
-        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );

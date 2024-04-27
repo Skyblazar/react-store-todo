@@ -1,13 +1,13 @@
-import { Navigate } from "react-router-dom";
+import { useStoreProperty } from "@skyblazar/react-store";
+import { Navigate, Outlet } from "react-router-dom";
+import { appStore } from "./stores/app.store";
 
-interface ProtectedRouteProps {
-  children: React.ReactNode;
-}
+export const ProtectedRoute: React.FC = () => {
+  const [user] = useStoreProperty(appStore, (state) => state.user, "user");
 
-export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-  if (!localStorage.getItem("email") || !localStorage.getItem("password")) {
+  if (!user?.email || !user.password) {
     return <Navigate to="/login" />;
   }
 
-  return children;
+  return <Outlet />;
 };
