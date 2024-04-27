@@ -1,10 +1,15 @@
-import { useState } from "react";
 import "./Todo.page.css";
+import { useStoreProperty } from "@skyblazar/react-store";
+import { todosStore } from "../stores/todos.store";
 
 export const TodoPage = () => {
-  const [todos, setTodos] = useState([
-    { id: crypto.randomUUID(), text: crypto.randomUUID() },
-  ]);
+  const [todos, setTodos] = useStoreProperty(
+    todosStore,
+    (state) => state.todos,
+    "todos"
+  );
+
+  console.log(todos);
 
   return (
     <div id="todo-page">
@@ -16,7 +21,7 @@ export const TodoPage = () => {
 
       <button
         onClick={() =>
-          setTodos((todos) =>
+          setTodos(({ todos }) =>
             todos.concat({ id: crypto.randomUUID(), text: crypto.randomUUID() })
           )
         }
