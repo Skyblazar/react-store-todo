@@ -1,5 +1,43 @@
-button {
+#todo-page button {
   position: fixed;
   bottom: 1vw;
   right: 1vh;
+}
+
+#todo-page .todo {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid;
+  border-radius: 0.3em;
+  background-color: black;
+  cursor: pointer;
+  text-align: start;
+  width: 70vw;
+  display: flex;
+  line-height: 1.2;
+  align-items: flex-start;
+}
+
+#todo-page .todo:hover {
+  background-color: #333;
+}
+
+#todo-page input {
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+#todo-page .delete {
+  font-weight: bolder;
+  color: indianred;
+  margin-left: 1em;
+  font-size: larger;
+}
+
+#todo-page .delete:hover {
+  filter: brightness(1.7);
+}
+
+#todo-page * {
+  transition: 0.3s ease-in-out;
 }

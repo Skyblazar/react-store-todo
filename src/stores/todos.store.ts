@@ -1,7 +1,7 @@
 import { Store } from "@skyblazar/react-store";
 
 interface TodosStoreState {
-  todos: { id: string; text: string }[];
+  todos: { id: string; text: string; done?: boolean }[];
 }
 
 export const todosStore = new Store<TodosStoreState>(

@@ -1,11 +1,11 @@
-form {
+#login-page form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-input {
+#login-page input {
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -15,6 +15,6 @@ input {
   min-width: 200px;
 }
 
-button {
+#login-page button {
   margin-top: 30px;
 }
