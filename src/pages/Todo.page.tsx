@@ -10,8 +10,6 @@ export const TodoPage = () => {
     "todos"
   );
 
-  console.log(todos);
-
   return (
     <div id="todo-page">
       <h1>Todos</h1>

@@ -2,6 +2,11 @@
   position: fixed;
   bottom: 1vw;
   right: 1vh;
+  background-color: #5dce6f;
+}
+
+#todo-page button:hover {
+  filter: brightness(0.8);
 }
 
 #todo-page .todo {
