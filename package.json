@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@skyblazar/react-store": "^0.2.6",
+    "@skyblazar/react-store": "^0.2.8",
     "chance": "^1.1.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
