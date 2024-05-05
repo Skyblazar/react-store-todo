@@ -3,6 +3,7 @@ import "./TopNav.css";
 import { Link } from "react-router-dom";
 import { appStore } from "./stores/app.store";
 import { useStoreProperty } from "@skyblazar/react-store";
+import { todosStore } from "./stores/todos.store";
 
 export const TopNav: React.FC = () => {
   const [user, setUser] = useStoreProperty(
@@ -11,9 +12,11 @@ export const TopNav: React.FC = () => {
     "user"
   );
 
+  const [todos] = useStoreProperty(todosStore, (state) => state.todos, "todos");
+
   return (
     <div id="top-nav">
-      <h3>Todos Test</h3>
+      <h3>Todos Test ({todos.length})</h3>
 
       <ul>
         <li>
