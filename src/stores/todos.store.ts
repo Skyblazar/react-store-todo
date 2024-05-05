@@ -9,10 +9,8 @@ export const todosStore = new Store<TodosStoreState>(
   "todosStore",
   { todos: [], counter: 0 },
   {},
-  { serializeOnUpdate: true }
+  { serializeOnUpdate: true, unserializeOnCreate: true }
 );
-
-todosStore.unserialize();
 
 todosStore.subscribeToStoreChange((newState, prevState) => {
   if (prevState.todos.length > newState.todos.length) {
