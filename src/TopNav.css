@@ -1,0 +1,17 @@
+#top-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1em 5em;
+  box-sizing: border-box;
+}
+
+#top-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}

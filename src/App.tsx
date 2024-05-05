@@ -4,10 +4,12 @@ import { LoginPage } from "./pages/Login.page";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { TodoPage } from "./pages/Todo.page";
 import { FreeRoute } from "./FreeRoute";
+import { TopNav } from "./TopNav";
 
 function App() {
   return (
     <Router>
+      <TopNav />
       <Routes>
         <Route path="/" element={<ProtectedRoute />}>
           <Route path="/" element={<TodoPage />} />
