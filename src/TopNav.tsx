@@ -16,7 +16,9 @@ export const TopNav: React.FC = () => {
 
   return (
     <div id="top-nav">
-      <h3>Todos Test ({todos.length})</h3>
+      <h3>
+        Todos Test ({todos.filter((todo) => todo.done).length}/{todos.length})
+      </h3>
 
       <ul>
         <li>

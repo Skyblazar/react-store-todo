@@ -28,9 +28,10 @@ export const TodoPage = () => {
           <span style={{ flex: 1 }}>{todo.text}</span>
           <span
             className="delete"
-            onClick={() =>
-              setTodos(({ todos }) => todos.filter(({ id }) => id !== todo.id))
-            }
+            onClick={(e) => {
+              e.stopPropagation();
+              todosStore.dispatch("DELETE_TODO", () => ({ id: todo.id }));
+            }}
           >
             x
           </span>
